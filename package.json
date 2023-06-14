@@ -1,0 +1,27 @@
+{
+  "name": "@cto.af/string-width",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "type": "module",
+  "repository": "cto-af/string-width",
+  "scripts": {
+    "lint": "eslint . --ext js,cjs,mjs",
+    "trie": "node tools/genWidthTrie.js",
+    "test": "c8 mocha",
+    "build": "npm run trie && npm run lint && npm run test && npm pack --dry-run"
+  },
+  "keywords": [],
+  "author": "Joe Hildebrand <joe-github@cursive.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "@cto.af/eslint-config": "1.1.2",
+    "c8": "8.0.0",
+    "eslint": "8.42.0",
+    "mocha": "10.2.0"
+  },
+  "dependencies": {
+    "@cto.af/unicode-trie": "1.2.0",
+    "emoji-regex": "10.2.1"
+  }
+}
