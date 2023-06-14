@@ -1,7 +1,7 @@
 {
   "name": "@cto.af/string-width",
   "version": "0.0.0",
-  "description": "",
+  "description": "Get width of a Unicode string in fixed-width display cells, accounting for combining characters, emojis, flags, Hangul, East Asian Width, default ignorables, and a few more.",
   "main": "lib/index.js",
   "type": "module",
   "types": "types/index.d.ts",
@@ -13,7 +13,13 @@
     "types": "tsc",
     "build": "npm run trie && npm run types && npm run lint && npm run test && npm pack --dry-run"
   },
-  "keywords": [],
+  "keywords": [
+    "unicocde",
+    "string",
+    "width",
+    "string-width",
+    "stringwidth"
+  ],
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
   "devDependencies": {
@@ -27,5 +33,8 @@
   "dependencies": {
     "@cto.af/unicode-trie": "1.2.0",
     "emoji-regex": "10.2.1"
+  },
+  "engines": {
+    "node": ">= 16"
   }
 }
