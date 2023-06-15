@@ -1,6 +1,7 @@
 .c8rc
 .editorconfig
 .eslintrc.cjs
+.github/
 .mocharc.cjs
 .vscode/
 coverage/
