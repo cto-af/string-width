@@ -1,3 +1,4 @@
+import {AMBIGUOUS, POTENTIAL_EMOJI} from '../lib/constants.js'
 import {UnicodeTrieBuilder} from '@cto.af/unicode-trie/builder.js'
 import {fileURLToPath} from 'url'
 import fs from 'fs/promises'
@@ -67,12 +68,12 @@ await processFile('EastAsianWidth', trie, x => {
     case 'W':
       return 2
     case 'A':
-      return 99
+      return AMBIGUOUS
   }
   return null
 })
 
-await processFile('emoji/emoji-data', trie, x => ((x === 'Emoji') ? 98 : null))
+await processFile('emoji/emoji-data', trie, x => ((x === 'Emoji') ? POTENTIAL_EMOJI : null))
 
 trie.setRange(0, 20, 0) // C0 Controls
 trie.set(0x8, -1) // Backspace
