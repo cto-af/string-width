@@ -53,13 +53,29 @@ describe('info', () => {
 
 describe('string breaks', () => {
   it('handles ascii only', () => {
-    assert.deepEqual(sw.break('foo', 10), ['foo', ''])
-    assert.deepEqual(sw.break('foobar', 3), ['foo', 'bar'])
-    assert.deepEqual(sw.break('foo', 0), ['', 'foo'])
+    assert.deepEqual(sw.break('foo', 10), [{string: 'foo', cells: 3}])
+    assert.deepEqual(sw.break('foobar', 3), [
+      {string: 'foo', cells: 3},
+      {string: 'bar', cells: 3},
+    ])
+    assert.throws(() => sw.break('foo', 0))
   })
   it('handles non-ascii', () => {
-    assert.deepEqual(sw.break('foo\u0308', 10), ['foo\u0308', ''])
-    assert.deepEqual(sw.break('foo\u0308ba\u0308r', 3), ['foo\u0308', 'ba\u0308r'])
-    assert.deepEqual(sw.break('foo\u0308', 0), ['', 'foo\u0308'])
+    assert.deepEqual(sw.break('foo\u0308', 10), [
+      {string: 'foo\u0308', cells: 3},
+    ])
+    assert.deepEqual(sw.break('foo\u0308ba\u0308r', 3), [
+      {string: 'foo\u0308', cells: 3},
+      {string: 'ba\u0308r', cells: 3},
+    ])
+    assert.deepEqual(sw.break('\u{1F1F9}\u{1F1FC}b', 1), [
+      {string: '\u{1F1F9}\u{1F1FC}', cells: 2},
+      {string: 'b', cells: 1},
+    ])
+    assert.deepEqual(sw.break('a\u{1F1F9}\u{1F1FC}b', 1), [
+      {string: 'a', cells: 1},
+      {string: '\u{1F1F9}\u{1F1FC}', cells: 2},
+      {string: 'b', cells: 1},
+    ])
   })
 })

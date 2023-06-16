@@ -19,7 +19,7 @@ const sw = new StringWidth()
 sw.width('foo') // 3
 sw.width('\u{1F4A9}') // 2: Emoji take two cells
 sw.width('#\ufe0f\u20e3') // 2: More complicated emoji
-sw.break('foobar', 3) // ['foo', 'bar']
+sw.break('foobar', 3) // [{string: 'foo', cells: 3}, {string: 'bar', cells: 3}]
 
 const custom = new StringWidth({
   locale: 'ko-KR',
