@@ -19,10 +19,14 @@ const sw = new StringWidth()
 sw.width('foo') // 3
 sw.width('\u{1F4A9}') // 2: Emoji take two cells
 sw.width('#\ufe0f\u20e3') // 2: More complicated emoji
-sw.break('foobar', 3) // [{string: 'foo', cells: 3}, {string: 'bar', cells: 3}]
+sw.break('foobar', 3) // [
+  //   {string: 'foo', cells: 3, last: false},
+  //   {string: 'bar', cells: 3, last: true}
+  // ]
 
 const custom = new StringWidth({
   locale: 'ko-KR',
+  isCJK: true,
   extraWidths: new Map([
     // This example is not actually useful, but demonstrates how to customize
 
@@ -47,12 +51,29 @@ const custom = new StringWidth({
   it's worth a performance shortcut
 - For each grapheme cluster:
   - Get the width of the first code point from extraWidths or the Trie.
-  - If the width is AMBIGUOUS, check the script of the locale to see if we're
-    in an East Asian context.
+  - If the width is AMBIGUOUS, return 2 if we're in a CJK context, otherwise 1.
   - If the width is POTENTIAL_EMOJI, check if the whole grapheme cluster is an
     emoji
 - Since backspace has a negative width, ensure that the total width is never
   less than zero.
+
+## Chinese, Japanese, or Korean (CJK) contexts
+
+Some code points have ambiguous length, which depends upon whether we are
+counting in a CJK context or not.  By default, StringWidth will look at the
+locale that is given (or derived from the environment), and use the default
+script of that locale to decide if this is a Chinese, Japanese, or Korean
+context.  The script identifiers `'Hans'`, `'Hant'`, `'Jpan'`, and `'Kore'`
+signal CJK context.  If desired, this detection can be overridden by passing
+in the `isCJK` field in the constructor options.
+
+## Width breaking
+
+The `break(string, N)` method slices a string into chunks, each of which is at
+most N cells.  This was so entangled with the width logic that it made sense
+to be in this library.  It is useful for strings that are longer than N that
+need to have a hyphen inserted between each of the segments, ensuring that the
+hyphen doesn't go in the middle of a grapheme cluster.
 
 ## Development
 
