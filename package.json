@@ -24,14 +24,14 @@
   "license": "MIT",
   "devDependencies": {
     "@cto.af/eslint-config": "3.0.2",
-    "@types/node": "20.8.10",
+    "@types/node": "20.10.0",
     "c8": "8.0.1",
-    "eslint": "8.52.0",
+    "eslint": "8.54.0",
     "mocha": "10.2.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "dependencies": {
-    "@cto.af/unicode-trie": "1.2.2",
+    "@cto.af/unicode-trie": "1.2.3",
     "emoji-regex": "10.3.0"
   },
   "engines": {
