@@ -8,3 +8,4 @@ coverage/
 test/
 tools/
 tsconfig.json
+.ncurc
