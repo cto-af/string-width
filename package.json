@@ -23,18 +23,19 @@
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
   "devDependencies": {
-    "@cto.af/eslint-config": "3.0.2",
-    "@types/node": "20.10.0",
-    "c8": "8.0.1",
-    "eslint": "8.54.0",
-    "mocha": "10.2.0",
-    "typescript": "5.3.2"
+    "@cto.af/eslint-config": "3.1.0",
+    "@types/node": "20.11.25",
+    "c8": "9.1.0",
+    "eslint": "8.57.0",
+    "mocha": "10.3.0",
+    "typescript": "5.4.2"
   },
   "dependencies": {
-    "@cto.af/unicode-trie": "1.2.3",
+    "@cto.af/unicode-trie": "2.0.0",
     "emoji-regex": "10.3.0"
   },
+  "packageManager": "pnpm@8.15.4",
   "engines": {
-    "node": ">= 16"
+    "node": ">= 18"
   }
 }
