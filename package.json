@@ -7,7 +7,7 @@
   "types": "types/index.d.ts",
   "repository": "cto-af/string-width",
   "scripts": {
-    "lint": "eslint . --ext js,cjs,mjs",
+    "lint": "eslint .",
     "trie": "node tools/genWidthTrie.js",
     "test": "c8 mocha",
     "types": "tsc",
@@ -23,18 +23,19 @@
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
   "devDependencies": {
-    "@cto.af/eslint-config": "3.1.0",
-    "@types/node": "20.11.25",
-    "c8": "9.1.0",
-    "eslint": "8.57.0",
-    "mocha": "10.3.0",
-    "typescript": "5.4.2"
+    "@cto.af/eslint-config": "4.1.5",
+    "@types/node": "22.0.2",
+    "c8": "10.1.2",
+    "eslint": "9.8.0",
+    "eslint-plugin-mocha": "10.5.0",
+    "mocha": "10.7.0",
+    "typescript": "5.5.4"
   },
   "dependencies": {
-    "@cto.af/unicode-trie": "2.0.0",
+    "@cto.af/unicode-trie": "2.0.1",
     "emoji-regex": "10.3.0"
   },
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@9.6.0",
   "engines": {
     "node": ">= 18"
   }
