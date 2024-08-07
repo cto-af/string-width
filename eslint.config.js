@@ -1,28 +1,27 @@
-import mocha from "@cto.af/eslint-config/mocha.js"
-import mod from "@cto.af/eslint-config/module.js";
+import cjs from '@cto.af/eslint-config/cjs.js';
+import js from '@cto.af/eslint-config/js.js';
+import mocha from '@cto.af/eslint-config/mocha.js';
+import mod from '@cto.af/eslint-config/module.js';
 
 export default [
   {
     ignores: [
-      "coverage/**",
-      "node_modules/**",
-      "**/*.d.ts",
+      'coverage/**',
+      'node_modules/**',
+      'docs/**',
+      '**/*.d.ts',
     ],
   },
+  ...js,
   ...mod,
-  {
-    files: ["**/*.cjs"],
-    languageOptions: {
-      sourceType: "commonjs",
-    },
-  },
+  ...cjs,
   ...mocha,
   {
     files: [
-      "lib/widths.js",
+      'lib/widths.js',
     ],
     rules: {
-      "@stylistic/object-curly-spacing": "off",
+      '@stylistic/object-curly-spacing': 'off',
     },
   },
 ];

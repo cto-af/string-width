@@ -1,5 +1,5 @@
 import {StringWidth} from '../lib/index.js';
-import assert from 'assert/strict';
+import assert from 'node:assert/strict';
 
 const LOCALE = 'en-US';
 const sw = new StringWidth({locale: LOCALE});
@@ -49,5 +49,17 @@ describe('string widths', () => {
       extraWidths: new Map([[0x101, 5]]),
     });
     assert.equal(swc.width('b\u0101r'), 7);
+  });
+
+  it('supports ANSI escape sequences', () => {
+    assert.equal(
+      sw.width('\x1b]8;;http://example.com\x07Liiink\x1b]8;;\x07'),
+      6
+    );
+    const swc = new StringWidth({includeANSI: true});
+    assert.equal(
+      swc.width('\x1b]8;;http://example.com\x07Liiink\x1b]8;;\x07'),
+      34
+    );
   });
 });
