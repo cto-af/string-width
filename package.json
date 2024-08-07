@@ -5,7 +5,10 @@
   "main": "lib/index.js",
   "type": "module",
   "types": "types/index.d.ts",
-  "repository": "cto-af/string-width",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cto-af/string-width.git"
+  },
   "scripts": {
     "docs": "typedoc",
     "lint": "eslint .",
