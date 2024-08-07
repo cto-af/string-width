@@ -8,6 +8,7 @@ export default [
     ignores: [
       'coverage/**',
       'node_modules/**',
+      'docs/**',
       '**/*.d.ts',
     ],
   },
