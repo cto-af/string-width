@@ -12,6 +12,8 @@ npm install @cto.af/string-width
 
 ## API
 
+Full [documentation](https://cto-af.github.io/string-width/) is available.
+
 ```js
 import {StringWidth, AMBIGUOUS, POTENTIAL_EMOJI} from '../lib/index.js'
 
@@ -20,7 +22,7 @@ sw.width('foo') // 3
 sw.width('\u{1F4A9}') // 2: Emoji take two cells
 sw.width('#\ufe0f\u20e3') // 2: More complicated emoji
 sw.break('foobar', 3) // [
-  //   {string: 'foo', cells: 3, last: false},
+  //   {string: 'foo', cells: 3},
   //   {string: 'bar', cells: 3, last: true}
   // ]
 
@@ -56,6 +58,8 @@ const custom = new StringWidth({
     emoji
 - Since backspace has a negative width, ensure that the total width is never
   less than zero.
+- ANSI escape sequences are ignored for width, unless the `includeANSI` option
+  is enabled.
 
 ## Chinese, Japanese, or Korean (CJK) contexts
 
