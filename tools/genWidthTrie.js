@@ -1,8 +1,8 @@
 import {AMBIGUOUS, POTENTIAL_EMOJI} from '../lib/constants.js';
 import {UnicodeTrieBuilder} from '@cto.af/unicode-trie/builder.js';
-import {fileURLToPath} from 'url';
-import fs from 'fs/promises';
-import path from 'path';
+import {fileURLToPath} from 'node:url';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +16,7 @@ async function processFile(name, trie, transform) {
     txt = await fs.readFile(INPUT, 'utf8');
   } catch (_ignored) {
     const url = `https://www.unicode.org/Public/UCD/latest/ucd/${name}.txt`;
+    // eslint-disable-next-line n/no-unsupported-features/node-builtins
     const res = await fetch(url);
     txt = await res.text();
     await fs.writeFile(INPUT, txt, 'utf8');

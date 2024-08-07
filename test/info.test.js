@@ -1,5 +1,5 @@
 import {StringWidth} from '../lib/index.js';
-import assert from 'assert/strict';
+import assert from 'node:assert/strict';
 
 const LOCALE = 'en-US';
 const sw = new StringWidth({locale: LOCALE});
