@@ -79,6 +79,13 @@ to be in this library.  It is useful for strings that are longer than N that
 need to have a hyphen inserted between each of the segments, ensuring that the
 hyphen doesn't go in the middle of a grapheme cluster.
 
+## Known Limitations
+
+- Font [ligatures](https://en.wikipedia.org/wiki/Ligature_(writing)) are not
+  taken into account.
+- Variable width fonts are not considered.  Calculated widths are in display
+  cells, not pixels.
+
 ## Development
 
 On a new Unicode version being released, delete the `tools/*.txt` files, then
