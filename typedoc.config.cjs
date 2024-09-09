@@ -14,6 +14,7 @@ module.exports = {
     includeGroups: false,
   },
   categorizeByGroup: false,
+  includeVersion: true,
   sort: ['static-first', 'alphabetical'],
   exclude: ['**/*.test.js'],
   validation: {

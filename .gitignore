@@ -1,5 +1,7 @@
 .vscode/
 coverage/
+docs/
+lib/widths.js
 node_modules/
 tools/*.txt
 types/
