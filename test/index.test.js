@@ -56,6 +56,10 @@ describe('string widths', () => {
       sw.width('\x1b]8;;http://example.com\x07Liiink\x1b]8;;\x07'),
       6
     );
+    assert.equal(
+      sw.width('\x1b]8;;http://example.com/\x1b\\This is a link\x1b]8;;\x1b\\ hello)'),
+      21
+    );
     const swc = new StringWidth({includeANSI: true});
     assert.equal(
       swc.width('\x1b]8;;http://example.com\x07Liiink\x1b]8;;\x07'),
