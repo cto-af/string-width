@@ -10,6 +10,7 @@
     "url": "git+https://github.com/cto-af/string-width.git"
   },
   "scripts": {
+    "clean": "rm -rf coverage docs types lib/widths.js",
     "docs": "typedoc",
     "lint": "eslint .",
     "trie": "node tools/genWidthTrie.js",

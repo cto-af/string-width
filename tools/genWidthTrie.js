@@ -16,7 +16,6 @@ async function processFile(name, trie, transform) {
     txt = await fs.readFile(INPUT, 'utf8');
   } catch (_ignored) {
     const url = `https://www.unicode.org/Public/UCD/latest/ucd/${name}.txt`;
-    // eslint-disable-next-line n/no-unsupported-features/node-builtins
     const res = await fetch(url);
     txt = await res.text();
     await fs.writeFile(INPUT, txt, 'utf8');
