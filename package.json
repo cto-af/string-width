@@ -1,6 +1,6 @@
 {
   "name": "@cto.af/string-width",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Get width of a Unicode string in fixed-width display cells, accounting for combining characters, emojis, flags, Hangul, East Asian Width, default ignorables, and a few more.",
   "main": "lib/index.js",
   "type": "module",
