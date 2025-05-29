@@ -1,6 +1,5 @@
 .vscode/
 coverage/
 docs/
-lib/widths.js
 node_modules/
 types/
