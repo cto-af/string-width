@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@cto.af/unicode-trie-runtime':
-        specifier: 3.2.2
-        version: 3.2.2
+        specifier: 3.2.3
+        version: 3.2.3
       ansi-regex:
         specifier: 6.1.0
         version: 6.1.0
@@ -22,8 +22,8 @@ importers:
         specifier: 6.0.4
         version: 6.0.4(eslint@9.27.0)(typescript@5.8.3)
       '@cto.af/unicode-trie':
-        specifier: 3.2.2
-        version: 3.2.2(@cto.af/unicode-trie-runtime@3.2.2)
+        specifier: 3.2.3
+        version: 3.2.3(@cto.af/unicode-trie-runtime@3.2.3)
       '@types/node':
         specifier: 22.15.24
         version: 22.15.24
@@ -64,15 +64,15 @@ packages:
     resolution: {integrity: sha512-BfS8oQ0OqlAflJsfLkzGDM//PJq6UIOwUIxvIuuf1rgRzzcWXfHOve+fGC0tB9K8MyJf6v9FkGm9xoYWNDv89w==}
     engines: {node: '>=20'}
 
-  '@cto.af/unicode-trie-runtime@3.2.2':
-    resolution: {integrity: sha512-4caIqW/8Opd9VHgszNhdVLySaUgqTqM9Sp6ai34RD4SowSpTmdb4jk3FMRuxVXPVflXC6jFsXBO2p8Rc25rScw==}
+  '@cto.af/unicode-trie-runtime@3.2.3':
+    resolution: {integrity: sha512-lP8tpf6C4UYqyT2h3IOjzgueixbQlxTZOSnpEswIrY9I79hqt1F4xK9q0MDM2e+mck13xOGlDLig9gcxLzhfzQ==}
     engines: {node: '>=20'}
 
-  '@cto.af/unicode-trie@3.2.2':
-    resolution: {integrity: sha512-JcUURIyfyYMRra4NWGpKijxnfN2b6gQQRn0anlrUQKqmpOg55fwyZW+4dwviWdwkxhgaVRbcZ+n7C7gd11k9Ig==}
+  '@cto.af/unicode-trie@3.2.3':
+    resolution: {integrity: sha512-FkCm6HesYo7andnAd63qoJF5r3Aj1kH4Zu1qJHgbaNmBou1N84n8dTHHTB/IQM9gKUtE0YlpLDgo4pm516FwcA==}
     engines: {node: '>=20'}
     peerDependencies:
-      '@cto.af/unicode-trie-runtime': 3.2.2
+      '@cto.af/unicode-trie-runtime': 3.2.3
 
   '@cto.af/utils@1.2.0':
     resolution: {integrity: sha512-un6kJgCIzPaQHRRMbtaUawMHLROAD+A6IdUa88nomc44mf2q1UGSiGWu0WCME2y2Vf42k2bFXPBUGQJOnf8X8w==}
@@ -1067,15 +1067,15 @@ snapshots:
       '@cto.af/log': 1.0.0
       '@cto.af/utils': 1.2.0
 
-  '@cto.af/unicode-trie-runtime@3.2.2':
+  '@cto.af/unicode-trie-runtime@3.2.3':
     dependencies:
       fflate: 0.8.2
 
-  '@cto.af/unicode-trie@3.2.2(@cto.af/unicode-trie-runtime@3.2.2)':
+  '@cto.af/unicode-trie@3.2.3(@cto.af/unicode-trie-runtime@3.2.3)':
     dependencies:
       '@cto.af/log': 1.0.0
       '@cto.af/ucd': 1.1.1
-      '@cto.af/unicode-trie-runtime': 3.2.2
+      '@cto.af/unicode-trie-runtime': 3.2.3
       '@cto.af/utils': 1.2.0
       fflate: 0.8.2
 
