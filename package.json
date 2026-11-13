@@ -33,22 +33,23 @@
   "license": "MIT",
   "dependencies": {
     "@cto.af/unicode-trie-runtime": "3.2.11",
-    "ansi-regex": "~6.4.0",
+    "ansi-regex": "~6.5.0",
     "emoji-regex": "~11.0.0"
   },
   "devDependencies": {
-    "@cto.af/eslint-config": "^7.0.3",
+    "@cto.af/eslint-config": "^7.0.4",
+    "@cto.af/ncurc": "^0.0.3",
     "@cto.af/unicode-trie": "^3.2.11",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "eslint": "^10.13.0",
+    "eslint": "^10.14.0",
     "eslint-plugin-mocha": "^12.0.2",
     "mocha": "^12.0.3",
     "superc8": "^12.7.0",
     "typedoc": "^0.28.20",
     "typescript": "npm:@typescript/typescript6@^6.0.2"
   },
-  "packageManager": "pnpm@12.15.0",
+  "packageManager": "pnpm@12.18.0",
   "engines": {
     "node": ">= 22"
   }
